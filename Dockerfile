@@ -2,9 +2,12 @@ FROM quay.io/argoproj/argocd:v3.0.4
 
 USER root
 
-# Instalar age y age-keygen
+# Instalar age y age-keygen (v1.2.1)
 RUN curl -sSL https://github.com/FiloSottile/age/releases/download/v1.2.1/age-v1.2.1-linux-amd64.tar.gz \
-    | tar -xz -C /usr/local/bin --strip-components=1 age/age age/age-keygen
+    | tar -xz -C /tmp && \
+    mv /tmp/age-v1.2.1-linux-amd64/age /usr/local/bin/ && \
+    mv /tmp/age-v1.2.1-linux-amd64/age-keygen /usr/local/bin/ && \
+    chmod +x /usr/local/bin/age /usr/local/bin/age-keygen
 
 # Instalar ksops
 RUN curl -sSL https://github.com/viaduct-ai/kustomize-sops/releases/latest/download/ksops-linux-amd64 \
