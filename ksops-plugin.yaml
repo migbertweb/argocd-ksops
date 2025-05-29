@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ConfigManagementPlugin
+metadata:
+  name: ksops
+spec:
+  version: v1.0
+  init:
+    command: [sh, -c]
+    args: ["echo KSOPS plugin initialized"]
+  generate:
+    command: [ksops]
+    args: ["-d", "."]
