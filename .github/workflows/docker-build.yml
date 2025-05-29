@@ -3,7 +3,7 @@ name: Build and Push ArgoCD KSOPS Image
 on:
   push:
     branches:
-      - main  # o cambia a la rama que uses
+      - master  # o cambia a la rama que uses
 
 jobs:
   build:
