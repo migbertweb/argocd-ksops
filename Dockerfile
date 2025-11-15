@@ -1,3 +1,18 @@
+# Archivo: Dockerfile
+# Descripción: Dockerfile personalizado para crear una imagen de ArgoCD con soporte para KSOPS y Age.
+#              Extiende la imagen oficial de ArgoCD v2.11.3 e instala las herramientas necesarias
+#              para manejar secretos encriptados con SOPS/Age en repositorios GitOps.
+# Autor: migbertweb
+# Fecha: 2024
+# Repositorio: https://github.com/migbertweb/argocd-ksops
+# Licencia: MIT License
+#
+# Uso: Construye una imagen Docker personalizada de ArgoCD que incluye KSOPS v4.3.3 y Age v1.2.1,
+#      permitiendo la gestión segura de secretos encriptados en aplicaciones GitOps.
+#
+# Nota: Este proyecto usa Licencia MIT. Se recomienda (no obliga) mantener 
+#       derivados como código libre, especialmente para fines educativos.
+
 FROM quay.io/argoproj/argocd:v2.11.3
 
 USER root

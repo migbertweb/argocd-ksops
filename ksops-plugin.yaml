@@ -1,3 +1,18 @@
+# Archivo: ksops-plugin.yaml
+# Descripción: Configuración del ConfigManagementPlugin para ArgoCD que permite usar KSOPS
+#              para procesar archivos encriptados con SOPS/Age en repositorios GitOps.
+#              Define los comandos de inicialización y generación para el plugin.
+# Autor: migbertweb
+# Fecha: 2024
+# Repositorio: https://github.com/migbertweb/argocd-ksops
+# Licencia: MIT License
+#
+# Uso: Este archivo se copia dentro de la imagen Docker en /home/argocd/cmp-plugins/ksops/plugin.yaml
+#      y permite que ArgoCD use KSOPS para desencriptar y procesar secretos en aplicaciones GitOps.
+#
+# Nota: Este proyecto usa Licencia MIT. Se recomienda (no obliga) mantener 
+#       derivados como código libre, especialmente para fines educativos.
+
 apiVersion: argoproj.io/v1alpha1
 kind: ConfigManagementPlugin
 metadata:
